@@ -10,6 +10,11 @@ ul{
     -ms-box-sizing:border-box;
 }
 
+html,body {
+    overflow-x: hidden; /* Must be 'scroll' not 'auto' */
+    -webkit-overflow-scrolling: touch;
+}
+
 html{
     scroll-behavior: smooth;
     max-width: 100vw;
@@ -22,6 +27,7 @@ html{
 }
 
 body{
+    position: relative;
     overflow-x: hidden;
 }
 
