@@ -10,6 +10,10 @@ ul{
     -ms-box-sizing:border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -27,7 +31,6 @@ a:visited {
 }
 
 a:hover{
-    pointer-events: none;
     font-weight: bold;
 }
 
@@ -35,7 +38,8 @@ a:hover{
     width: 100vw;
     padding: 1rem;
     margin-top: 0;
-    background-color: rgba(255, 255, 255, .4);
+    top: 0;
+    background-color: rgba(255, 255, 255, .7);
     color: white;
     justify-content: space-around;
     align-items: center;
@@ -43,6 +47,7 @@ a:hover{
     position: fixed;
     -webkit-box-shadow: -1px 8px 19px -13px rgba(0,0,0,0.48); 
     box-shadow: -1px 8px 19px -13px rgba(0,0,0,0.48);
+    z-index: 1;
 }
 
 li{
@@ -56,14 +61,12 @@ nav{
 }
 
 body{
-    background: hsla(217, 100%, 50%, 1);
-    background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+    background-image: linear-gradient(to right, #0062ff, #0090ff, #00b4ff, #00d3ff, #61efff);
 }
 
 #logo{
-    font-weight: 400;
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    font-weight: 700;
+    color: #e4a512;
     margin-right: 2rem;
 }
 
@@ -148,7 +151,7 @@ body{
     background-color: #CFD8DC;
 } */
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 1200px) {
     .backContainer{
         margin-left: 1000px;
     }
@@ -173,13 +176,29 @@ body{
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         font-size: 2rem;
+        padding-top: 50px;
+    }
+
+    .about{
+        margin-top: 25vh;
     }
     .about h1{
         font-size: 5rem;
     }
     .about h3{
-        font-size: 2rem;
+
+        font-size: 3rem;
     }
+
+    .venn h1{
+    font-size: 2rem;
+    text-align: center;
+    }
+    #back{
+        position:absolute; 
+        top: 10px;
+    }
+
 }
 
 .backContainer{
@@ -192,6 +211,7 @@ body{
     width: 100vw;
     height: 100vh;
     margin-left: 2rem;
+    top: 100px;
     animation: 2.3s ease-in-out 0s 1 slideFromBottom;
 }
 
@@ -225,6 +245,7 @@ body{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 14px;
+
 }
 
 .about h3{
@@ -242,6 +263,7 @@ body{
     scroll-snap-align: center;
     height: 100vh;
     color: white;
+    padding-left: 1rem;
 }
 
 .block1{
@@ -266,7 +288,12 @@ body{
     margin-left: 1rem;
     margin-right: 1rem;
     line-height: 20px;
-
+    text-shadow: 2px 2px 7px rgba(0,0,0,0.58);
+    font-size: 1rem;
+    line-break: strict;
+    padding-top: 1rem;
+    text-align: center;
+    padding-right: 3rem;
 }
 
 .block1 h2{
@@ -285,9 +312,4 @@ body{
     0 5px 15px 0 rgba(37, 44, 97, 0.15);
 }
 
-.venn{
-    font-size: 1rem;
-    line-break: strict;
-    padding-top: 1rem;
-    padding-right: 1rem;
-}
+

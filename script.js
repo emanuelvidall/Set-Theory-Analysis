@@ -1,17 +1,18 @@
+let ArrayAlunos = [];
+
 async function fetchData(){
     const url = 'alunoss.json';
     const response = await fetch(url);
     //wait request complete
     const datapoints = await response.json();
-    console.log(datapoints)
-    return datapoints;
+    ArrayAlunos = [];
+    for (let i = 0; i < datapoints.alunos.length; i++) {
+        ArrayAlunos.push(datapoints.alunos[i].nome);
+    }
+    return ArrayAlunos;
 }
 
-fetchData().then((datapoints) => {
-    const names = datapoints.alunos.nome.map(function(index){});
-});
-
-console.log(names)
+    console.log(ArrayAlunos);
 
 const data = ChartVenn.extractSets(
     [
