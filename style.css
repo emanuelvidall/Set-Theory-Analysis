@@ -12,6 +12,7 @@ ul{
 
 html{
     scroll-behavior: smooth;
+    max-width: 100vw;
 }
 
 *{
@@ -268,7 +269,6 @@ body{
 
 .block1{
     margin-top: 2rem;
-    padding: 0.5rem;
     background-color: white;
     width: 50vw;
     height: 25vh;
@@ -276,7 +276,6 @@ body{
     left: 90%;
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
 }
 
 .venn{
