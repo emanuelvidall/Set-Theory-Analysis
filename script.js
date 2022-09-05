@@ -71,6 +71,24 @@ async function fetchData(){
     document.getElementById('myChart'),
     config
     );
+
 }
+
+// function interval() {
+//     while (true) {
+//         setInterval(showImage, 1);
+//     }
+// }
+// function showImage() {
+
+//     var x = clientX;
+//     var y = clientY;
+//     var image = document.getElementById("headshot");
+//     image.style.left = x;
+//     image.style.top = y;
+// }
+
+// interval();
+// showImage();
 
 fetchData();
