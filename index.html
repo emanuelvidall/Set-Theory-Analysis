@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Análise de Conjuntos</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -43,7 +44,7 @@
         <section id="firstSection" name="firstSection">
             <div class="about">
                 <h1>Análise de<span class="matematicaText"> Conjuntos</span></h1>
-                <h2>Trabalho sobre o tema de Teoria dos Conjuntos, realizado para composição de nota da AV1, da disciplina de Matemática para Computação, do primeiro semestre do curso de Analise e Desenvolvimento de Sistemas da Universidade de Fortaleza - UNIFOR</h2>
+                <h2>Trabalho sobre o tema de Teoria dos Conjuntos, realizado para composição de nota da AV1, da disciplina <br> de Matemática para Computação, do primeiro semestre do curso de Analise e Desenvolvimento de Sistemas <br>da Universidade de Fortaleza - UNIFOR</h2>
                 <h3><span class="orangeSmallText">Alunos:</span>Emanuel Vidal</span></a> & Rafael Saboia</h3>
                 <h3><span class="orangeSmallText">Professor:</span> Jose Rubens Rodrigues de Sousa</h3>
             </div>
@@ -63,10 +64,38 @@
                             <script src="script.js" defer></script>
                         </div>
                     <div class="explicacao">
-                        <p> O numero de pessoas, somente alunos, e de, entao, 168, que representa apenas a unidade vermelha do grafico.</p>
+                        <p> O numero de pessoas, somente alunos, e de, entao, 168, que representa apenas a unidade vermelha do grafico. (A - D) é o suficiente para responder esta questão.</p>
+                    </div>
+                    <div class="block1">
+                            <canvas id="myChart2"></canvas>
+                            <script src="script.js" defer></script>
+                        </div>
+                    <div class="explicacao">
+                        <p>explicacao</p>
                     </div>
                 </div>
             </div>
         </section>
     </body>
 </html>
+
+<!--  1) Relatório Educação: Informar nome, data de nascimento e id dos cidadãos de XPTO que frequentaram a escola, menos os cidadãos que tiveram dengue.
+(A-D)
+ 2) Relatório Saúde: Informar nome, data de nascimento e data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, menos os cidadãos que não utilizam ônibus.
+(D + (D in A) - O)
+3) Relatório Mobilidade: Informar nome, data de nascimento e linhas de ônibus dos cidadãos de XPTO que utilizaram o transporte público e não tiveram dengue.
+(O - D)
+4) Relatório Educação e Saúde: Informar nome, data de nascimento, id e data que tiveram dengue dos cidadãos de XPTO que frequentaram a escola e tiveram dengue.
+(A in D)
+5) Relatório Educação e Mobilidade: Informar nome, data de nascimento, id e linhas de ônibus dos cidadãos de XPTO que frequentaram a escola e utilizaram transporte público.
+(A in O)
+6) Relatório Saúde e Mobilidade: Informar nome, data de nascimento, data que tiveram dengue e linhas de ônibus dos cidadãos de XPTO que frequentaram o posto de saúde e utilizaram transporte público.
+(D in O)
+7) Relatório Saúde, Mobilidade e Educação: Informar nome, data de nascimento, data que tiveram dengue e linhas de ônibus  dos cidadãos de XPTO que frequentaram o posto de saúde, utilizaram transporte público e frequentaram a escola.
+(A in D in O)
+8) Informar nome, data de nascimento, data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, mas não utilizaram transporte público.
+(D - O)
+9) Informar nome, data de nascimento, data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, mas não frequentaram a escola.
+(D - A)
+10) Informar nome, data de nascimento, data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, mas não frequentaram a escola, nem utilizaram transporte público.
+(D) -->
