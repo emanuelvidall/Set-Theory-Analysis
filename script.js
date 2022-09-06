@@ -133,6 +133,119 @@ async function fetchData(){
     config2
     );
 
+            const data3 = ChartVenn.extractSets(
+        [
+            {
+                label: 'Alunos',
+                values: ArrayAlunos,
+            },
+                    {
+                label: 'Onibus',
+                values: OnibusArray,
+            },
+        ]
+    );
+
+    const config3 = {
+        type: 'venn',
+        data: data3,
+        options: {
+            plugins: {
+            title: {
+                display: true,
+                text: 'Questão 3',
+            },
+            legend: {
+                display: false,
+            },
+            },
+            borderColor: [
+                'rgba(255, 26, 104, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(0, 0, 0, 1)'
+            ],
+            backgroundColor: [
+                'rgba(255, 26, 104, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(0, 0, 0, 0.2)'
+            ],
+        }
+    }; 
+
+    const myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    config3
+    );
+
+    const data4 = ChartVenn.extractSets(
+        [
+            {
+                label: 'Alunos',
+                values: ArrayAlunos,
+            },
+            {
+                label: 'Dengue',
+                values: DengueArray,
+            },
+                    {
+                label: 'Onibus',
+                values: OnibusArray,
+            },
+        ]
+    );
+
+    const config4 = {
+        type: 'venn',
+        data: data4,
+        options: {
+            plugins: {
+            title: {
+                display: true,
+                text: 'Questão 3',
+            },
+            legend: {
+                display: false,
+            },
+            },
+            borderColor: [
+                'rgba(255, 26, 104, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(0, 0, 0, 1)'
+            ],
+            backgroundColor: [
+                'rgba(255, 26, 104, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(0, 0, 0, 0.2)'
+            ],
+        }
+    }; 
+
+    const myChart4 = new Chart(
+    document.getElementById('myChart4'),
+    config4
+    );
+
+    let x = [];
+    for (var i = 0; i <=ArrayAlunos.length; i++) {
+        x.push(ArrayAlunos[i] - DengueArray[i]);
+    }
+    console.log(x);
 }
 
 // function interval() {
@@ -151,5 +264,9 @@ async function fetchData(){
 
 // interval();
 // showImage();
+
+
+
+
 
 fetchData();

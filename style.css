@@ -73,6 +73,7 @@ nav{
 
 body{
     background-image: linear-gradient(to right, #0062ff, #0090ff, #00b4ff, #00d3ff, #61efff);
+    overflow: hidden;
 }
 
 #logo{
@@ -271,7 +272,6 @@ body{
 }
 
 #firstSection{
-    scroll-snap-type: y mandatory;
     height: 100vh;
     padding-top: 5.5rem;
 }
@@ -279,7 +279,7 @@ body{
 #secondSection{
     padding-top: 5.5rem;
     scroll-snap-align: center;
-    height: 100vh;
+    height: auto;
     color: white;
     padding-left: 1rem;
 }
