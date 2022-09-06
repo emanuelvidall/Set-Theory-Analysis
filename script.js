@@ -1,47 +1,36 @@
 
+// async fetch json file and populating arrays with names.
 async function fetchData(){
-    const url = 'alunosformated.json';
+    const url = 'allsetsfixed.json';
     const response = await fetch(url);
-    const datapoints = await response.json();
-    ArrayAlunos = [];
+    const datapoints = await response.json(); 
+
+    arrayNomesAlunos = [];
     for (let i = 0; i < datapoints.alunos.length; i++) {
-        ArrayAlunos.push(datapoints.alunos[i].nome);
+    arrayNomesAlunos.push(datapoints.alunos[i].nome);
     }
-
-    const url2 = 'dengueformated.json';
-    const response2 = await fetch(url2);
-    const datapoints2 = await response2.json();
-    DengueArray = [];
-        for (let i = 0; i < datapoints2.dengue.length; i++) {
-        DengueArray.push(datapoints2.dengue[i].nome);
+    arrayNomesDengue = [];
+    for (let i = 0; i < datapoints.dengue.length; i++) {
+    arrayNomesDengue.push(datapoints.dengue[i].nome);
     }
-
-    const url3 = 'onibusformated.json';
-    const response3 = await fetch(url3);
-    const datapoints3 = await response3.json();
-    OnibusArray = [];
-        for (let i = 0; i < datapoints3.onibus.length; i++) {
-        OnibusArray.push(datapoints3.onibus[i].nome);
+    arrayNomesOnibus = [];
+    for (let i = 0; i < datapoints.onibus.length; i++) {
+    arrayNomesOnibus.push(datapoints.onibus[i].nome);
     }
-
-    console.log(DengueArray);
-    console.log(ArrayAlunos);
-    console.log(OnibusArray);
-
+// creating data for Charts.js ChartVenn plugin, using the arrays populated above.
     const data = ChartVenn.extractSets(
         [
             {
                 label: 'Alunos',
-                values: ArrayAlunos,
+                values: arrayNomesAlunos,
             },
                     {
                 label: 'Dengue',
-                values: DengueArray,
+                values: arrayNomesDengue,
             },
         ]
     );
-
-    // config 
+// configurating chart.js properties
     const config = {
         type: 'venn',
         data,
@@ -75,7 +64,7 @@ async function fetchData(){
             ],
         }
     }; 
-    // render init block
+// rendering chart in div
     const myChart = new Chart(
     document.getElementById('myChart'),
     config
@@ -85,11 +74,11 @@ async function fetchData(){
         [
             {
                 label: 'Onibus',
-                values: OnibusArray,
+                values: arrayNomesOnibus,
             },
                     {
                 label: 'Dengue',
-                values: DengueArray,
+                values: arrayNomesDengue,
             },
         ]
     );
@@ -137,11 +126,11 @@ async function fetchData(){
         [
             {
                 label: 'Alunos',
-                values: ArrayAlunos,
+                values: arrayNomesAlunos,
             },
                     {
                 label: 'Onibus',
-                values: OnibusArray,
+                values: arrayNomesOnibus,
             },
         ]
     );
@@ -189,15 +178,15 @@ async function fetchData(){
         [
             {
                 label: 'Alunos',
-                values: ArrayAlunos,
+                values: arrayNomesAlunos,
             },
             {
                 label: 'Dengue',
-                values: DengueArray,
+                values: arrayNomesDengue,
             },
                     {
                 label: 'Onibus',
-                values: OnibusArray,
+                values: arrayNomesOnibus,
             },
         ]
     );
@@ -241,32 +230,6 @@ async function fetchData(){
     config4
     );
 
-    let x = [];
-    for (var i = 0; i <=ArrayAlunos.length; i++) {
-        x.push(ArrayAlunos[i] - DengueArray[i]);
-    }
-    console.log(x);
 }
-
-// function interval() {
-//     while (true) {
-//         setInterval(showImage, 1);
-//     }
-// }
-// function showImage() {
-
-//     var x = clientX;
-//     var y = clientY;
-//     var image = document.getElementById("headshot");
-//     image.style.left = x;
-//     image.style.top = y;
-// }
-
-// interval();
-// showImage();
-
-
-
-
 
 fetchData();
