@@ -62,23 +62,30 @@
                             <canvas id="myChart"></canvas>
                         </div>
                     <div class="explicacao">
-                        <p> O numero de pessoas, somente alunos, e de, entao, 168, que representa apenas a unidade vermelha do grafico. (A - D) é o suficiente para responder esta questão.</p>
+                        <p>Elementos únicos de A, únicos de D, e a intersecção A ∩ D</p>
                     </div>
                     <div class="block1">
                             <canvas id="myChart2"></canvas>
                         </div>
                     <div class="explicacao">
-                        <p>explicacao</p>
+                        <p>Elementos únicos de O, únicos de D, e a intersecção O ∩ D</p>
                     </div>
                     <div class="block1">
                             <canvas id="myChart3"></canvas>
                         </div>
                     <div class="explicacao">
-                        <p>explicacao</p>
+                        <p>Elementos únicos de A, únicos de O, e a intersecção A ∩ O</p>
                     </div>
                     <div class="block1">
                             <canvas id="myChart4"></canvas>
                         </div>
+                    <div class="explicacao">
+                        <p>Todos os conjuntos do universo. Elementos pertencente exclusivamente à cada um dos conjuntos (A, D, O) e suas intersecções(A∩D, A∩O, D∩O, A∩D∩O)</p>
+                    </div>
+                    <div class="block2">
+                        <button id="btn1" onclick="lista()">Gerar Lista</button>
+                        <div class="lista"></div>
+                    </div>
                     <div class="explicacao">
                         <p>explicacao</p>
                     </div>
@@ -91,7 +98,7 @@
 <!--  1) Relatório Educação: Informar nome, data de nascimento e id dos cidadãos de XPTO que frequentaram a escola, menos os cidadãos que tiveram dengue.
 (A-D)
  2) Relatório Saúde: Informar nome, data de nascimento e data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, menos os cidadãos que não utilizam ônibus.
-(D + (D in A) - O)
+(D + O - (A-in-D and A-in-O))
 3) Relatório Mobilidade: Informar nome, data de nascimento e linhas de ônibus dos cidadãos de XPTO que utilizaram o transporte público e não tiveram dengue.
 (O - D)
 4) Relatório Educação e Saúde: Informar nome, data de nascimento, id e data que tiveram dengue dos cidadãos de XPTO que frequentaram a escola e tiveram dengue.

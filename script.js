@@ -3,30 +3,21 @@
 async function fetchData(){
     const url = 'allsetsfixed.json';
     const response = await fetch(url);
-    const datapoints = await response.json(); 
+    const datapoints = await response.json();
+    const nomesAlunos = datapoints.alunos.map((pessoaAluno) => pessoaAluno.nome);
+    const nomesDengue = datapoints.dengue.map((pessoaDengue) => pessoaDengue.nome)
+    const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
 
-    arrayNomesAlunos = [];
-    for (let i = 0; i < datapoints.alunos.length; i++) {
-    arrayNomesAlunos.push(datapoints.alunos[i].nome);
-    }
-    arrayNomesDengue = [];
-    for (let i = 0; i < datapoints.dengue.length; i++) {
-    arrayNomesDengue.push(datapoints.dengue[i].nome);
-    }
-    arrayNomesOnibus = [];
-    for (let i = 0; i < datapoints.onibus.length; i++) {
-    arrayNomesOnibus.push(datapoints.onibus[i].nome);
-    }
 // creating data for Charts.js ChartVenn plugin, using the arrays populated above.
     const data = ChartVenn.extractSets(
         [
             {
                 label: 'Alunos',
-                values: arrayNomesAlunos,
+                values: nomesAlunos,
             },
                     {
                 label: 'Dengue',
-                values: arrayNomesDengue,
+                values: nomesDengue,
             },
         ]
     );
@@ -38,7 +29,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: 'Questão 1',
+                text: '(A U D)',
             },
             legend: {
                 display: false,
@@ -74,11 +65,11 @@ async function fetchData(){
         [
             {
                 label: 'Onibus',
-                values: arrayNomesOnibus,
+                values: nomesOnibus,
             },
                     {
                 label: 'Dengue',
-                values: arrayNomesDengue,
+                values: nomesDengue,
             },
         ]
     );
@@ -90,7 +81,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: 'Questão 3',
+                text: '(O U D)',
             },
             legend: {
                 display: false,
@@ -126,11 +117,11 @@ async function fetchData(){
         [
             {
                 label: 'Alunos',
-                values: arrayNomesAlunos,
+                values: nomesAlunos,
             },
                     {
                 label: 'Onibus',
-                values: arrayNomesOnibus,
+                values: nomesOnibus,
             },
         ]
     );
@@ -142,7 +133,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: 'Questão 3',
+                text: '(A U O)',
             },
             legend: {
                 display: false,
@@ -178,15 +169,15 @@ async function fetchData(){
         [
             {
                 label: 'Alunos',
-                values: arrayNomesAlunos,
+                values: nomesAlunos,
             },
             {
                 label: 'Dengue',
-                values: arrayNomesDengue,
+                values: nomesDengue,
             },
                     {
                 label: 'Onibus',
-                values: arrayNomesOnibus,
+                values: nomesOnibus,
             },
         ]
     );
@@ -198,7 +189,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: 'Questão 3',
+                text: '(A U D U O)',
             },
             legend: {
                 display: false,
@@ -231,5 +222,5 @@ async function fetchData(){
     );
 
 }
-
+// each chart needs its own block of data, config and render.
 fetchData();
