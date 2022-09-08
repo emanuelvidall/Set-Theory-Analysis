@@ -1,7 +1,7 @@
 
 // async fetch json file and populating arrays with names.
 async function fetchData(){
-    const url = 'allsetsfixed.json';
+    const url = '/src/data/allsetsfixed.json';
     const response = await fetch(url);
     const datapoints = await response.json();
     const nomesAlunos = datapoints.alunos.map((pessoaAluno) => pessoaAluno.nome);
