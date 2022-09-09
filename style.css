@@ -8,6 +8,18 @@ ul{
     line-height: 2rem;
 }
 
+#btn1 a{
+    color: black;
+    padding: 0.5rem;
+}
+
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 33%; 
+}
+
 * , *:before, *:after{ 
     box-sizing:border-box; 
     -moz-box-sizing:border-box; 
@@ -347,4 +359,23 @@ body{
 
 .orangeSmallText{
     color: #f89e18;
+}
+
+#thirdSection{
+    color: white;
+    text-shadow: 2px 2px 7px rgba(0,0,0,0.58);
+}
+
+.questoes-respostas{
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+
+.questoes-respostas p{
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
 }
