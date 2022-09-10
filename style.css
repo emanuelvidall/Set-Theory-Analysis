@@ -188,6 +188,60 @@ body{
         width: 600px;
         height: 600px;
     }
+
+    #fourthSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    #fifthSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #quote {
+        font-size: 0.85rem;
+    }
+    .block-code{
+        font-size: 0.8rem;
+        width: 45vw;
+        padding: 4vw;
+        border-radius: 7px;
+        cursor: pointer;
+        height: auto;
+        background-color: #201c24;
+        -webkit-box-shadow: 0px 0px 15px -5px #000000; 
+        box-shadow: 0px 0px 15px -5px #000000;
+        transition: all 0.5s ease-in-out;
+    }
+    .block-metodologia{
+        text-align: justify;
+        width: 45vw;
+        padding: 4vw;
+        border-radius: 7px;
+        cursor: pointer;
+        height: auto;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 15px -5px #000000; 
+        box-shadow: 0px 0px 15px -5px #000000;
+        transition: all 0.5s ease-in-out;
+    }
+    .block-metodologia:hover{
+        transform: scale(1.1);
+        box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2), 0 5px 15px 0 rgba(37, 44, 97, 0.15);
+    }
+
+    .block-metodologia h3{
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        font-family: serif;
+        color: #62627B;
+    }
+    .block-metodologia p{
+        color: #62627B;
+        font-family: serif;
+    }
     .about{
         padding: 0.5rem;
         border-radius: 5px;
@@ -228,8 +282,8 @@ body{
         top: 10px;
     }
     div.block1{
-        width: 25vw;
-        height: 13vw;
+        width: 50vw;
+        height: 50vh;
     }
     div.explicacao{
         width: 25vw;
@@ -260,6 +314,8 @@ body{
         transform: translateY(0%);
         opacity: 100%;
     }
+
+    
 }
 
 .about{
