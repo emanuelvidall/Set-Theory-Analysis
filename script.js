@@ -26,6 +26,11 @@ async function fetchData(){
         type: 'venn',
         data,
         options: {
+            layout: {
+                padding: {
+                    bottom: 16,
+                }
+            },
             plugins: {
             title: {
                 display: true,
@@ -78,6 +83,11 @@ async function fetchData(){
         type: 'venn',
         data: data2,
         options: {
+            layout: {
+                padding: {
+                    bottom: 16,
+                }
+            },
             plugins: {
             title: {
                 display: true,
@@ -130,6 +140,11 @@ async function fetchData(){
         type: 'venn',
         data: data3,
         options: {
+            layout: {
+                padding: {
+                    bottom: 16,
+                }
+            },
             plugins: {
             title: {
                 display: true,
@@ -186,6 +201,11 @@ async function fetchData(){
         type: 'venn',
         data: data4,
         options: {
+            layout: {
+                padding: {
+                    bottom: 16,
+                }
+            },
             plugins: {
             title: {
                 display: true,
@@ -220,6 +240,24 @@ async function fetchData(){
     document.getElementById('myChart4'),
     config4
     );
+
+//intersection function to get the intersection of two arrays
+    function intersection() {
+    var result = nomesAlunos.filter(function (e) {
+        return this.indexOf(e) > -1;
+    }, nomesOnibus);
+}
+
+intersection();
+
+function differenceSet(){
+    var diff = nomesAlunos.filter(function(x) {
+    return nomesOnibus.indexOf(x) < 0;
+    });
+    console.log(diff);
+}
+
+differenceSet();
 
 }
 // each chart needs its own block of data, config and render.
