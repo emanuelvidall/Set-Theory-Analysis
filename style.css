@@ -282,8 +282,8 @@ body{
         top: 10px;
     }
     div.block1{
-        width: 50vw;
-        height: 50vh;
+        min-width: 50vw;
+        min-height: 50vh;
     }
     div.explicacao{
         width: 25vw;
