@@ -6,9 +6,9 @@
         <h3> Q2- Pessoas que frequentaram o posto de saúde, menos os cidadãos que não utilizam ônibus. (D  - (d in o) + (a in d in o))<h3>
     </h2>
     <tr>
-        <th>ID</th>
         <th>Nome</th>
         <th>Nascimento</th>
+        <th>Data Dengue</th>
     </tr>
     <tr>
         <td width="30%" style="border: solid 1px black;"id="ids">
@@ -29,18 +29,51 @@
                 const nomesAlunos = datapoints.alunos.map((pessoaAluno) => pessoaAluno.nome);
                 const nomesDengue = datapoints.dengue.map((pessoaDengue) => pessoaDengue.nome)
                 const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
+                
                 var diff = nomesAlunos.filter(function(x) {
                 return nomesOnibus.indexOf(x) < 0;});
+
                 let placeholder = document.getElementById("ids");
                 let placeholder2 = document.getElementById("names");
                 let placeholder3 = document.getElementById("nascimento");
-                console.log(...intersect)
-                for(let i = 0; i < nomesAlunos.length; i++){
-                    for (let j = 0; j < diff.length; j++){
-                        if (diff[j] == nomesAlunos[i]){
-                            placeholder.innerHTML += `<br><tr>${datapoints.alunos[i].id}</tr>`;
-                            placeholder2.innerHTML += `<br><tr>${datapoints.alunos[i].nome}</tr>`
-                            placeholder3.innerHTML += `<br><tr>${datapoints.alunos[i].nascimento}<tr>`;
+                
+                //array of names that are in both dengue and alunos
+                var result2 = nomesDengue.filter(function (e) {
+                    return this.indexOf(e) > -1;
+                }, nomesAlunos);
+                console.log("Intersecção A in D");
+                console.log(result2);
+
+
+                //triple intersection
+                var object = { filterA: nomesAlunos, filterB: nomesDengue, filterN: nomesOnibus },
+                    result = Object
+                        .values(object)
+                        .reduce((a, b) => b.filter(Set.prototype.has, new Set(a)));
+                console.log("Intersecção tripla");
+                console.log(result); 
+
+                var newArr = result.concat(result2);
+
+                console.log("Dengue");
+                console.log(nomesDengue);
+                var newArr2 = nomesDengue.filter(x => !result2.includes(x));
+                console.log("D - (a in D)");
+                console.log(newArr2);
+
+                console.log("resposta q2");
+
+                var newArr3 = result.concat(newArr2);
+                
+                console.log(newArr3);
+                console.log(datapoints)
+
+                for(let i = 0; i < nomesDengue.length; i++){
+                    for (let j = 0; j < newArr3.length; j++){
+                        if (newArr3[j] == nomesDengue[i]){
+                            placeholder2.innerHTML += `<br><tr>${datapoints.dengue[i].nome}</tr>`
+                            placeholder3.innerHTML += `<br><tr>${datapoints.dengue[i].nascimento}<tr>`;
+                            placeholder.innerHTML += `<br><tr>${datapoints.dengue[i]['data-dengue']}</tr>`;
                         }
                     }
                 };
