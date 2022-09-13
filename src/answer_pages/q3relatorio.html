@@ -1,0 +1,60 @@
+<body>
+<table style=" background-color: beige; border: solid 1px black;">
+    <colgroup span="3" class="columns"></colgroup>
+    <h2>
+        Relatório Mobilidade
+        <h3> Q3) O + (O in A) - D<h3>
+    </h2>
+    <tr>
+        <th>Nome</th>
+        <th>Nascimento</th>
+        <th>Linhas de Onibus</th>
+    </tr>
+    <tr>
+        <td width="30%" style="border: solid 1px black;"id="nome">
+        </td>
+        <td style="border: solid 1px black;" id="nascimento">
+        </td>
+        <td style="border: solid 1px black;" id="onibus">
+        </td>
+    </tr>
+    <tr> 
+
+    </tr>
+    <script defer>
+            async function differenceSet(){
+                const url = '/src/data/allsetsfixed.json';
+                const response = await fetch(url);
+                const datapoints = await response.json();
+                const nomesAlunos = datapoints.alunos.map((pessoaAluno) => pessoaAluno.nome);
+                const nomesDengue = datapoints.dengue.map((pessoaDengue) => pessoaDengue.nome)
+                const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
+                let placeholder = document.getElementById("nome");
+                let placeholder2 = document.getElementById("nascimento");
+                let placeholder3 = document.getElementById("onibus");
+                //O in A
+                var result2 = nomesOnibus.filter(function (e) {
+                    return this.indexOf(e) > -1;
+                }, nomesAlunos);
+                //O + (O in A)
+                var newArr = result2.concat(nomesOnibus);
+                //O + (O in A) - D
+                var newArr2 = newArr.filter(x => !nomesDengue.includes(x));
+                for(let i = 0; i < nomesOnibus.length; i++){
+                    for (let j = 0; j < newArr2.length; j++){
+                        if (newArr2[j] == nomesOnibus[i]){
+                            placeholder3.innerHTML += `<br><tr>${datapoints.onibus[i].onibus}</tr>`;
+                            placeholder2.innerHTML += `<br><tr>${datapoints.onibus[i].nascimento}<tr>`;
+                            placeholder.innerHTML += `<br><tr>${datapoints.onibus[i].nome}</tr>`;
+                            
+                        }
+                    }
+                };
+            };
+            
+        differenceSet();
+
+    </script>
+</body>
+
+
