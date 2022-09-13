@@ -1,0 +1,61 @@
+<body>
+<table style=" background-color: beige; border: solid 1px black;">
+    <colgroup span="3" class="columns"></colgroup>
+    <h2>
+        Relatório Educação e Saúde:
+        <h3> Q4) (D in A) <h3>
+    </h2>
+    <tr>
+        <th>Nome</th>
+        <th>Nascimento</th>
+        <th>id</th>
+        <th>Data Dengue</th>
+    </tr>
+    <tr>
+        <td width="30%" style="border: solid 1px black;"id="nome">
+        </td>
+        <td style="border: solid 1px black;" id="nascimento">
+        </td>
+        <td style="border: solid 1px black;" id="id">
+        </td>
+        <td style="border: solid 1px black;" id="dengue">
+        </td>
+    </tr>
+    <tr> 
+
+    </tr>
+    <script defer>
+            async function q3function(){
+                const url = '/src/data/allsetsfixed.json';
+                const response = await fetch(url);
+                const datapoints = await response.json();
+                const nomesAlunos = datapoints.alunos.map((pessoaAluno) => pessoaAluno.nome);
+                const nomesDengue = datapoints.dengue.map((pessoaDengue) => pessoaDengue.nome)
+                const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
+                let placeholder = document.getElementById("nome");
+                let placeholder2 = document.getElementById("nascimento");
+                let placeholder3 = document.getElementById("id");
+                let placeholder4 = document.getElementById("dengue");
+                //O in A
+                var result2 = nomesAlunos.filter(function (e) {
+                    return this.indexOf(e) > -1;
+                }, nomesDengue);
+                for(let i = 0; i < nomesDengue.length; i++){
+                    for (let j = 0; j < result2.length; j++){
+                        if (result2[j] == nomesDengue[i]){
+                            placeholder4.innerHTML += `<br><tr>${datapoints.dengue[i]['data-dengue']}</tr>`;
+                            placeholder3.innerHTML += `<br><tr>${datapoints.dengue[i].id}<tr>`;
+                            placeholder2.innerHTML += `<br><tr>${datapoints.dengue[i].nascimento}</tr>`;
+                            placeholder.innerHTML += `<br><tr>${datapoints.dengue[i].nome}</tr>`;
+                            
+                        }
+                    }
+                };
+            };
+            
+        q3function();
+
+    </script>
+</body>
+
+

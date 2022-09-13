@@ -30,17 +30,26 @@
                 const nomesDengue = datapoints.dengue.map((pessoaDengue) => pessoaDengue.nome)
                 const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
                 var diff = nomesAlunos.filter(function(x) {
-                return nomesOnibus.indexOf(x) < 0;});
+                return nomesDengue.indexOf(x) < 0;});
                 let placeholder = document.getElementById("ids");
                 let placeholder2 = document.getElementById("names");
                 let placeholder3 = document.getElementById("nascimento");
-
+                //triple intersection
+                var object = { filterA: nomesAlunos, filterB: nomesDengue, filterN: nomesOnibus },
+                    result = Object
+                        .values(object)
+                        .reduce((a, b) => b.filter(Set.prototype.has, new Set(a)));
+                //difference between two arrays
+                var newArray = diff.filter(x => !result.includes(x));
+                console.log(diff);
+                console.log(result);
                 for(let i = 0; i < nomesAlunos.length; i++){
-                    for (let j = 0; j < diff.length; j++){
-                        if (diff[j] == nomesAlunos[i]){
+                    for (let j = 0; j < newArray.length; j++){
+                        if (newArray[j] == nomesAlunos[i]){
                             placeholder.innerHTML += `<br><tr>${datapoints.alunos[i].id}</tr>`;
                             placeholder2.innerHTML += `<br><tr>${datapoints.alunos[i].nome}</tr>`
                             placeholder3.innerHTML += `<br><tr>${datapoints.alunos[i].nascimento}<tr>`;
+                            break;
                         }
                     }
                 };

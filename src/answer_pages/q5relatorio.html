@@ -2,18 +2,21 @@
 <table style=" background-color: beige; border: solid 1px black;">
     <colgroup span="3" class="columns"></colgroup>
     <h2>
-        Relatório Mobilidade
-        <h3> Q3) O + (O in A) - D<h3>
+        Relatório Educação e Mobilidade:
+        <h3> Q5) (A in O) <h3>
     </h2>
     <tr>
         <th>Nome</th>
         <th>Nascimento</th>
+        <th>id</th>
         <th>Linhas de Onibus</th>
     </tr>
     <tr>
         <td width="30%" style="border: solid 1px black;"id="nome">
         </td>
         <td style="border: solid 1px black;" id="nascimento">
+        </td>
+        <td style="border: solid 1px black;" id="id">
         </td>
         <td style="border: solid 1px black;" id="onibus">
         </td>
@@ -31,30 +34,20 @@
                 const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
                 let placeholder = document.getElementById("nome");
                 let placeholder2 = document.getElementById("nascimento");
-                let placeholder3 = document.getElementById("onibus");
+                let placeholder3 = document.getElementById("id");
+                let placeholder4 = document.getElementById("onibus");
                 //O in A
-                var result2 = nomesOnibus.filter(function (e) {
+                var result2 = nomesAlunos.filter(function (e) {
                     return this.indexOf(e) > -1;
-                }, nomesAlunos);
-                //O + (O in A)
-                var newArr = result2.concat(nomesOnibus);
-                //O - D
-                var newArr2 = nomesAlunos.filter(x => !nomesOnibus.includes(x));
-                //triple intersection
-                var object = { filterA: nomesAlunos, filterB: nomesDengue, filterN: nomesOnibus },
-                    result = Object
-                        .values(object)
-                        .reduce((a, b) => b.filter(Set.prototype.has, new Set(a)));
-                //O-D - triple intersection
-                var newArr3 = result2.filter(x => !result.includes(x));
-                //(O in A) - triple intersection + D
-                var newArr4 = result.concat(newArr2);
+                }, nomesOnibus);
                 for(let i = 0; i < nomesOnibus.length; i++){
-                    for (let j = 0; j < newArr4.length; j++){
-                        if (newArr4[j] == nomesOnibus[i]){
-                            placeholder3.innerHTML += `<br><tr>${datapoints.onibus[i].onibus}</tr>`;
-                            placeholder2.innerHTML += `<br><tr>${datapoints.onibus[i].nascimento}<tr>`;
+                    for (let j = 0; j < result2.length; j++){
+                        if (result2[j] == nomesOnibus[i]){
+                            placeholder4.innerHTML += `<br><tr>${datapoints.onibus[i].onibus}</tr>`;
+                            placeholder3.innerHTML += `<br><tr>${datapoints.onibus[i].id}<tr>`;
+                            placeholder2.innerHTML += `<br><tr>${datapoints.onibus[i].nascimento}</tr>`;
                             placeholder.innerHTML += `<br><tr>${datapoints.onibus[i].nome}</tr>`;
+                            break;
                             
                         }
                     }
