@@ -1,0 +1,55 @@
+<body>
+<table style=" background-color: beige; border: solid 1px black;">
+    <colgroup span="3" class="columns"></colgroup>
+    <h2>
+        <h3> Q10) D - A - O<h3>
+    </h2>
+    <tr>
+        <th>Nome</th>
+        <th>Nascimento</th>
+        <th>Dengue</th>
+    </tr>
+    <tr>
+        <td width="30%" style="border: solid 1px black;"id="nome">
+        </td>
+        <td style="border: solid 1px black;" id="nascimento">
+        </td>
+        <td style="border: solid 1px black;" id="dengue">
+        </td>
+    </tr>
+    <tr> 
+
+    </tr>
+    <script defer>
+            async function q9function(){
+                const url = '/src/data/allsetsfixed.json';
+                const response = await fetch(url);
+                const datapoints = await response.json();
+                const nomesAlunos = datapoints.alunos.map((pessoaAluno) => pessoaAluno.nome);
+                const nomesDengue = datapoints.dengue.map((pessoaDengue) => pessoaDengue.nome)
+                const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
+                let placeholder = document.getElementById("nome");
+                let placeholder2 = document.getElementById("nascimento");
+                let placeholder3 = document.getElementById("dengue");
+                
+                var newArr = nomesDengue.filter(x => !nomesAlunos.includes(x));
+                var newArr2 = newArr.filter(x => !nomesOnibus.includes(x));
+
+                for(let i = 0; i < nomesDengue.length; i++){
+                    for (let j = 0; j < newArr2.length; j++){
+                        if (newArr2[j + 1] == nomesDengue[i]){
+                            placeholder3.innerHTML += `<br><tr>${datapoints.dengue[i]['data-dengue']}<tr>`;
+                            placeholder2.innerHTML += `<br><tr>${datapoints.dengue[i].nascimento}</tr>`;
+                            placeholder.innerHTML += `<br><tr>${datapoints.dengue[i].nome}</tr>`;
+                            break;
+                        }
+                    }
+                };
+            };
+            
+        q9function();
+
+    </script>
+</body>
+
+
