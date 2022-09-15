@@ -34,6 +34,7 @@
                 let placeholder = document.getElementById("ids");
                 let placeholder2 = document.getElementById("names");
                 let placeholder3 = document.getElementById("nascimento");
+                let count = 0;
                 //triple intersection
                 var object = { filterA: nomesAlunos, filterB: nomesDengue, filterN: nomesOnibus },
                     result = Object
@@ -49,13 +50,16 @@
                             placeholder.innerHTML += `<br><tr>${datapoints.alunos[i].id}</tr>`;
                             placeholder2.innerHTML += `<br><tr>${datapoints.alunos[i].nome}</tr>`
                             placeholder3.innerHTML += `<br><tr>${datapoints.alunos[i].nascimento}<tr>`;
+                            count++;
                             break;
                         }
                     }
                 };
+                console.log(count);
             };
             
         differenceSet();
+
 
     </script>
 </body>

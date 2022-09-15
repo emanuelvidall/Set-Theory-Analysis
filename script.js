@@ -34,7 +34,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: '(A U D)',
+                text: '',
             },
             legend: {
                 display: false,
@@ -91,7 +91,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: '(O U D)',
+                text: '',
             },
             legend: {
                 display: false,
@@ -148,7 +148,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: '(A U O)',
+                text: '',
             },
             legend: {
                 display: false,
@@ -209,7 +209,7 @@ async function fetchData(){
             plugins: {
             title: {
                 display: true,
-                text: '(A U D U O)',
+                text: '',
             },
             legend: {
                 display: false,

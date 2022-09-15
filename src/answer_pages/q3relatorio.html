@@ -3,7 +3,7 @@
     <colgroup span="3" class="columns"></colgroup>
     <h2>
         Relatório Mobilidade
-        <h3> Q3) O + (O in A) - D<h3>
+        <h3> Q3) O - D<h3>
     </h2>
     <tr>
         <th>Nome</th>
@@ -46,19 +46,22 @@
                         .values(object)
                         .reduce((a, b) => b.filter(Set.prototype.has, new Set(a)));
                 //O-D - triple intersection
-                var newArr3 = result2.filter(x => !result.includes(x));
+                var newArr3 = nomesOnibus.filter(x => !nomesDengue.includes(x));
+                let count = 0;
                 //(O in A) - triple intersection + D
                 var newArr4 = result.concat(newArr2);
                 for(let i = 0; i < nomesOnibus.length; i++){
-                    for (let j = 0; j < newArr4.length; j++){
-                        if (newArr4[j] == nomesOnibus[i]){
+                    for (let j = 0; j < newArr3.length; j++){
+                        if (newArr3[j] == nomesOnibus[i]){
                             placeholder3.innerHTML += `<br><tr>${datapoints.onibus[i].onibus}</tr>`;
                             placeholder2.innerHTML += `<br><tr>${datapoints.onibus[i].nascimento}<tr>`;
                             placeholder.innerHTML += `<br><tr>${datapoints.onibus[i].nome}</tr>`;
+                            count++;
                             
                         }
                     }
                 };
+                console.log(count);
             };
             
         q3function();
