@@ -98,7 +98,7 @@
 - Se apenas um dos sobrenomes é igual a um do pai ou mae[...]<h3>...</h3><br>
                 </p>
             </div>
-            <div class="block-code"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width="30px" height="30px"><h3 style="color: #c4c8d4;">Script.js</h3><pre style="background-color: #201c24;"><code class="language-javascript">
+            <div class="block-code"><img src="chartjs.png" width="30px" height="30px"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width="30px" height="30px"><h3 style="color: #c4c8d4;">Script.js</h3><pre style="background-color: #201c24;"><code class="language-javascript">
                 
     //fetching data
                 async function fetchData(){
@@ -124,6 +124,13 @@
     //duo intersection
         var result2 = nomesDengue.filter(function (e) {
             return this.indexOf(e) > -1;
+    //search algorithm
+    for(let i = 0; i < nomesDengue.length; i++){
+                    for (let j = 0; j < result2.length; j++){
+                        if (result2[j] == nomesDengue[i]){
+                            placeholder3.innerHTML += `<br><tr>${datapoints.dengue[i]['data-dengue']}</tr>`;
+                            placeholder2.innerHTML += `<br><tr>${datapoints.dengue[i].nascimento}<tr>`;
+                            placeholder.innerHTML += `<br><tr>${datapoints.dengue[i].nome}</tr>`;
 </code></pre></div>
         </section>
         <section id="fifthSection" name="fifthSection" style="height: fit-content;">
