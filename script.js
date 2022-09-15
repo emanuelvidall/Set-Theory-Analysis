@@ -9,6 +9,7 @@ async function fetchData(){
     const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
 
 // creating data for Charts.js ChartVenn plugin, using the arrays populated above.
+Chart.defaults.font.size = 30;
     const data = ChartVenn.extractSets(
         [
             {
