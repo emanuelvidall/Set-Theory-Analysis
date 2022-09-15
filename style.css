@@ -3,6 +3,16 @@ ul{
     list-style-type: none;
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: orange;
+}
+
+::selection {
+    color: white;
+    background: orange;
+}
+
 .questoes-respostas{
     text-align: left;
     line-height: 2rem;
@@ -180,6 +190,35 @@ body{
     background-color: #CFD8DC;
 } */
 
+.charts span{
+    color: orange;
+}
+
+#metodologiatxt{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.charts h1{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.block-metodologia h1{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.questoes-respostas span{
+    color: orange;
+}
+
+.questoes-respostas h1{
+    margin-bottom: 3rem;
+    text-shadow: none;
+    font-size: 2rem;
+}
+
 @media only screen and (min-width: 1200px) {
     .backContainer{
         margin-left: 1000px;
@@ -188,7 +227,9 @@ body{
         width: 600px;
         height: 600px;
     }
-
+    .block-metodologia:hover h3{
+        color: orange;
+    }
     #fourthSection{
         display: flex;
         justify-content: center;
@@ -227,7 +268,7 @@ body{
         padding: 4vw;
         border-radius: 7px;
         cursor: pointer;
-        height: auto;
+        height: 81.5vh;
         background-color: white;
         -webkit-box-shadow: 0px 0px 15px -5px #000000; 
         box-shadow: 0px 0px 15px -5px #000000;
@@ -321,7 +362,7 @@ body{
     padding: 4vw;
     border-radius: 7px;
     cursor: pointer;
-    height: auto;
+    height: 81.5vh;
     background-color: white;
     -webkit-box-shadow: 0px 0px 15px -5px #000000; 
     box-shadow: 0px 0px 15px -5px #000000;

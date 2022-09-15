@@ -46,7 +46,7 @@
         </section>
         <section id="secondSection" name="secondSection">
             <div class="charts">
-                <h1>Análise dos Diagramas de Venn</h1>
+                <h1>Análise dos <span id="diagramasdeventxt">Diagramas de Venn</span></h1>
                 <div class="venn">
                     <p>Os Diagramas de Venn a seguir foram gerados atráves dos dados fornecidos pelo professor. Utilizou-se da metodologia explicada no trabalho para obteção dos conjuntos, suas uniões, intersecções e subtrações.</p>
                         <div class="block1">
@@ -76,26 +76,27 @@
         </section>
         <section id="thirdSection" name="thirdSection">
             <div class="questoes-respostas">
+                <h1>Geração dos <span>Relatórios das Questões</span></h1>
                 <h3>1) Relatório Educação:</h3>Informar nome, data de nascimento e id dos cidadãos de XPTO que frequentaram a escola, menos os cidadãos que tiveram dengue.<br><button id="btn1"><a href="/src/answer_pages/q1relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>2) Relatório Saúde:</h3> Informar nome, data de nascimento e data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, menos os cidadãos que não utilizam ônibus.<br><button id="btn1"><a href="/src/answer_pages/q2relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>3) Relatório Mobilidade:</h3> Informar nome, data de nascimento e linhas de ônibus dos cidadãos de XPTO que utilizaram o transporte público e não tiveram dengue.<br><button id="btn1"><a href="/src/answer_pages/q3relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>4) Relatório Educação e Saúde:</h3> Informar nome, data de nascimento, id e data que tiveram dengue dos cidadãos de XPTO que frequentaram a escola e tiveram dengue.<br><button id="btn1"><a href="/src/answer_pages/q4relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>5)</h3> Relatório Educação e Mobilidade: Informar nome, data de nascimento, id e linhas de ônibus dos cidadãos de XPTO que frequentaram a escola e utilizaram transporte público.<br><button id="btn1"><a href="/src/answer_pages/q5relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>6)</h3> Relatório Saúde e Mobilidade: Informar nome, data de nascimento, data que tiveram dengue e linhas de ônibus dos cidadãos de XPTO que frequentaram o posto de saúde e utilizaram transporte público.<br><button id="btn1"><a href="/src/answer_pages/q6relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>7)</h3> Relatório Saúde, Mobilidade e Educação: Informar nome, data de nascimento, data que tiveram dengue e linhas de ônibus  dos cidadãos de XPTO que frequentaram o posto de saúde, utilizaram transporte público e frequentaram a escola.<br><button id="btn1"><a href="/src/answer_pages/q7relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>8)</h3> Informar nome, data de nascimento, data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, mas não utilizaram transporte público.<br><button id="btn1"><a href="/src/answer_pages/q8relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>9)</h3> Informar nome, data de nascimento, data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, mas não frequentaram a escola.<br><button id="btn1"><a href="/src/answer_pages/q9relatorio.html" target="_blank">Gerar Lista</a></button><br><hr><br><h3>10)</h3> Informar nome, data de nascimento, data que tiveram dengue dos cidadãos de XPTO que frequentaram o posto de saúde, mas não frequentaram a escola, nem utilizaram transporte público.<br><button id="btn1"><a href="/src/answer_pages/q10relatorio.html" target="_blank">Gerar Lista</a></button><br>
                 </p>
+                <h1 id="metodologiatxt">Descrição da<span> Metodologia e Código</span></h1>
             </div>
         </section>
         <section id="fourthSection" name="fourthSection">
             <div class="block-metodologia">
-            <h3>Metodologia</h3>
+            <a href="/pdftrabalho.html" target="_blank"><h3>Metodologia</h3></a>
             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPara conseguirmos fazer a análise, primeiro utilizamos da conversão dos arquivos fornecidos, que encontravam-se inicialmente em formato “.csv” (comma-separated values), para um formato que fosse mais fácil a manipulação, no caso, escolhemos trabalhar com o software Microsoft Excel, por isso, para que todas as linhas e colunas ficassem bem alinhadas, utilizamos um conversor online para converter os arquivos para o formato “.xlxs” (Microsoft Excel Open XML Spreadsheet).
                 <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTambém foi preciso fazer um pré-tratamento nos dados, antes de tentar efetuar qualquer análise. Os dados foram fornecidos com diversos erros de digitação, input, datas incorretas, colunas trocadas de lugar, utilização de caractéres inválidos. De acordo com o site PósGraduando(2016): 
 <br><br><p id="quote">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp“Anotar os dados de forma imprecisa: Por descuido ou mau planejamento, pode-se acabar com informações menos precisas que o necessário. O exemplo comum é da pesquisa em que se pergunta a idade do pesquisado, e não sua data de nascimento. No primeiro caso, há maiores chances de respostas incorretas, por arredondamento, esquecimento ou mentira do pesquisado.”</p><br>
 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAssim, para seguir com o tratamento dos dados, foi definido um algorítimo pela equipe, para tratar de tais  problemas. Este algoritmo consiste dos seguintes passos:<br>
 - Removendo linhas com primeiros nomes totalmente ilegiveis;<br>
 - Corrigir os primeiros nomes e sobrenomes que fazem algum sentido porém estao apenas com os caracteres embaralhados;<br>
-- Se apenas um dos sobrenomes é igual a um do pai ou mae, corrigi-lo e descartar os demais. Se ambos sobrenomes estiverem presentes, corrigir ambos;<br>
-- Se o primeiro nome for acompanhando de 1 ou mais iniciais de sobrenomes (em maiúsculo), mantém-se como está;<br>
-- Se o primeiro nome estiver correto e for acompanhado de uma inicial de sobrenome porém existindo outro sobrenome de forma completa, remove-se o que tem somente a inicial;<br>
+- Se apenas um dos sobrenomes é igual a um do pai ou mae[...]<h3>...</h3><br>
                 </p>
             </div>
             <div class="block-code"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width="30px" height="30px"><h3 style="color: #c4c8d4;">Script.js</h3><pre style="background-color: #201c24;"><code class="language-javascript">
                 
+    //fetching data
                 async function fetchData(){
     const url = '/src/data/allsetsfixed.json';
     const response = await fetch(url);
@@ -104,38 +105,21 @@
     const nomesDengue = datapoints.dengue.map((pessoaDengue) => pessoaDengue.nome)
     const nomesOnibus = datapoints.onibus.map((pessoaOnibus) => pessoaOnibus.nome);
 
-// creating data for Charts.js ChartVenn plugin, using the arrays populated above.
-    const data = ChartVenn.extractSets(
-        [
-            {
-                label: 'Alunos',
-                values: nomesAlunos,
-            },
-                    {
-                label: 'Dengue',
-                values: nomesDengue,
-            },
-        ]
+    //rendering chart in div
+        const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
     );
-// configurating chart.js properties
-    const config = {
-        type: 'venn',
-        data,
-        options: {
-            plugins: {
-            title: {
-                display: true,
-                text: '(A U D)',
-            },
-            legend: {
-                display: false,
-            },
-
-// rendering chart in div
-    const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-    );
+    //triple intersection
+        var object = { filterA: nomesAlunos, filterB: nomesDengue, filterN: nomesOnibus },
+            result = Object
+                .values(object)
+                .reduce((a, b) => b.filter(Set.prototype.has, new Set(a)));
+    //difference between two arrays
+        var newArray = diff.filter(x => !result.includes(x));
+    //duo intersection
+        var result2 = nomesDengue.filter(function (e) {
+            return this.indexOf(e) > -1;
 </code></pre></div>
         </section>
         <section id="fifthSection" name="fifthSection">
